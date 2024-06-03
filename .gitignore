@@ -3,7 +3,7 @@
 
 .idea
 .tgitconfig
-.code-workspace
+*.code-workspace
 node_modules/*
 vendor/*
 
