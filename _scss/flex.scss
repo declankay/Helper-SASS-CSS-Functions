@@ -1,0 +1,29 @@
+//-----------------------------------------------------------------------//
+//      Flex
+//      @param flex-direction - Direction of flex: column or row.
+//      @param horizontal - Horizontal direction: center, flex-start, flex-end etc.
+//      @param vertical - Vertical direction: center, flex-start, flex-end etc.
+//      @param flex-wrap - If content wraps or not: wrap or no-wrap.
+//-----------------------------------------------------------------------//
+
+@mixin flex($flex-direction, $horizontal: '', $vertical: '', $flex-wrap: '') {
+	display: flex;
+	flex-direction: unquote($flex-direction);
+	flex-wrap: unquote($flex-wrap);
+
+	@if $flex-direction ==column {
+		align-items: unquote($horizontal);
+		justify-content: unquote($vertical);
+	}
+
+	@else {
+		align-items: unquote($vertical);
+		justify-content: unquote($horizontal);
+	}
+
+}
+
+// Example
+.flex {
+	@include flex('column', 'center', 'flex-start', 'wrap');
+}

@@ -1,0 +1,15 @@
+//-----------------------------------------------------------------------//
+//      Background Image Full Cover
+//      @param background-size - Space taken up by image: cover, contain etc.
+//-----------------------------------------------------------------------//
+
+@mixin bg-cover($background-size: cover) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $background-size;
+}
+
+// Example
+.bg-cover {
+    @include bg-cover;
+}

@@ -1,0 +1,89 @@
+//-----------------------------------------------------------------------//
+//      Sitewide Spacing Values
+//      @param spacing-type - Type of spacing: padding or margin.
+//      @param size - Size of spacing: xs up to xl.
+//      @param direction - Direction of spacing: top or bottom.
+//-----------------------------------------------------------------------//
+
+@mixin standard-vertical-spacing($spacing-type, $size, $direction: '') {
+
+	// XS - 10  ->  15
+	// SM - 15  ->  25
+	// MD - 20  ->  30
+	// LG - 30  40  50
+	// XL - 40  60  80
+
+	@if $size ==xs {
+		#{$spacing-type}: 10px 0;
+
+		// Desktop and up
+		@media only screen and (min-width: 1200px) {
+			#{$spacing-type}: 15px 0;
+		}
+
+	}
+
+	@else if $size ==sm {
+		#{$spacing-type}: 15px 0;
+
+		// Desktop and up
+		@media only screen and (min-width: 1200px) {
+			#{$spacing-type}: 25px 0;
+		}
+
+	}
+
+	@else if $size ==md {
+		#{$spacing-type}: 20px 0;
+
+		// Desktop and up
+		@media only screen and (min-width: 1200px) {
+			#{$spacing-type}: 30px 0;
+		}
+
+	}
+
+	@else if $size ==lg {
+		#{$spacing-type}: 30px 0;
+
+		// Wide tablet and up
+		@media only screen and (min-width: 992px) {
+			#{$spacing-type}: 40px 0;
+		}
+
+		// Desktop and up
+		@media only screen and (min-width: 1200px) {
+			#{$spacing-type}: 50px 0;
+		}
+
+	}
+
+	@else if $size ==xl {
+		#{$spacing-type}: 40px 0;
+
+		// Wide tablet and up
+		@media only screen and (min-width: 992px) {
+			#{$spacing-type}: 60px 0;
+		}
+
+		// Desktop and up
+		@media only screen and (min-width: 1200px) {
+			#{$spacing-type}: 80px 0;
+		}
+
+	}
+
+	@if $direction ==top {
+		#{$spacing-type}-bottom: 0 !important;
+	}
+
+	@else if $direction ==bottom {
+		#{$spacing-type}-top: 0 !important;
+	}
+
+}
+
+// Example
+.standard-vertical-spacing {
+	@include standard-vertical-spacing('padding', 'xl', 'top');
+}

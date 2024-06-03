@@ -1,0 +1,35 @@
+//-----------------------------------------------------------------------//
+//      Position Absolute
+//      @param positioning - Edge or center of content: standard or center.
+//      @param top - Distance from top: variable value e.g. 10px
+//      @param right - Distance from right: variable value e.g. 10px
+//      @param bottom - Distance from bottom: variable value e.g. 10px
+//      @param left - Distance from left: variable value e.g. 10px
+//-----------------------------------------------------------------------//
+
+@mixin position-absolute($positioning, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+
+	@if $positioning ==standard {
+		bottom: unquote($bottom);
+		left: unquote($left);
+		top: unquote($top);
+		right: unquote($right);
+	}
+
+	@else if $positioning ==center {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+}
+
+// Example
+.absolute-standard {
+	@include position-absolute('standard', '10px', '10px', '', '');
+}
+
+.absolute-center {
+	@include position-absolute('center');
+}

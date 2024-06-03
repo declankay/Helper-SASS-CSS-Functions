@@ -1,0 +1,50 @@
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.absolute-standard {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.browser-prefix {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.standard-vertical-spacing {
+  padding: 40px 0;
+  padding-bottom: 0 !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .standard-vertical-spacing {
+    padding: 60px 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .standard-vertical-spacing {
+    padding: 80px 0;
+  }
+}

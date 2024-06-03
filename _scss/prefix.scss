@@ -1,0 +1,18 @@
+//-----------------------------------------------------------------------//
+//      Add Prefixes for Browser Support
+//      @param property - CSS Property: variable value e.g. "appearance".
+//      @param value - CSS Value: variable value e.g. "none" .
+//-----------------------------------------------------------------------//
+
+@mixin prefix($property, $value) {
+	-webkit-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+// Example
+.browser-prefix {
+	@include prefix('appearance', 'none');
+}
